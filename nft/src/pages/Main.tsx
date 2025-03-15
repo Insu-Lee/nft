@@ -18,6 +18,8 @@ const Main = () => {
       sessionStorage.setItem('privateKey', account.privateKey);
       sessionStorage.setItem('address', account.address);
 
+      window.dispatchEvent(new Event('storage'));
+
       navigate('/nfts', { state: { account } });
     } else {
       alert('Private Key를 입력해주세요!');

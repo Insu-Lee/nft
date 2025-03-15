@@ -1,7 +1,22 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const isAccount = sessionStorage.getItem('address') || '';
+  const [isAccount, setIsAccount] = useState(
+    sessionStorage.getItem('address') || ''
+  );
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsAccount(sessionStorage.getItem('address') || '');
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   return (
     <header style={{ background: '#333', padding: '10px', color: 'white' }}>

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cd nft && npm run start",
     "install": "cd nft && npm install && cd .. && cd contract && npm install",
-    "deploy": "cd contract && npm run deploy"
+    "deploy:contract": "cd contract && npm run deploy",
+    "deploy:client": "cd nft && npm run deploy"
   },
   "repository": {
     "type": "git",
