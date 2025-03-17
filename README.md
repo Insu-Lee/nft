@@ -8,4 +8,8 @@
 
 ### Client Local Start
 
-`# npm run start`
+`$ npm run start`
+
+### Contract Deploy
+
+`$ npm run deploy:contract`
